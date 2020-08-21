@@ -1,0 +1,15 @@
+extends ../layout/common
+
+block content
+    h1 Update book
+    form(action="/books/update",method="POST")
+        label Title
+        br
+        input(type="text", name="title")
+        br
+        label Description
+        br
+        input(type="(text)", name="description")
+        br
+        input(type="text",name="id", value=book.id,style="display:none")
+        button Update

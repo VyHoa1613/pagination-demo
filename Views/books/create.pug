@@ -1,0 +1,14 @@
+extends ../layout/common
+
+block content
+    h1 Create book
+    form(action="/books/create",method="POST")
+        label Title
+        br
+        input(type="text", name="title",class="form-control")
+        br
+        label Description
+        br
+        input(type="(text)", name="description",class="form-control")
+        br
+        button(class="btn btn-primary mb-2") Create

@@ -1,0 +1,19 @@
+extends ../layout/common
+
+block content
+    h1 Create book
+    form(action="/transaction/create",method="POST")
+            label(for="name") Name
+            select(name="userId")
+                each user in users
+                    option#op1(value=user.id)=user.name
+
+            br
+            label Books
+            select(name="bookId")
+                each book in books
+                    option#op2(value=book.id)=book.title
+            label isComplete
+                input(type="checkbox",name="isComplete",value="false",checked="false",style="display:none")
+            button Create
+

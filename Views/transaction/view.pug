@@ -1,0 +1,25 @@
+extends ../layout/common
+
+block content
+  h1 View
+  style.
+    th,td{
+    border: 1px solid black;
+    text-align:center;
+    }
+    table{
+      width: 500px;
+    }
+  table
+      tr
+          th Name
+          th BookName
+          th isComplete
+          tr
+              td= tran.userId
+              td= tran.bookId
+              td
+                form(action="/transaction/complete",method="POST")
+                      input(type="checkbox",name="isComplete",value="true",checked="",style="display:none")
+                      input(type="text",name="id",value=tran.id,style="display:none")
+                      button Complete
