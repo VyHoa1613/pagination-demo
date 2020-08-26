@@ -5,8 +5,13 @@ var bcrypt = require('bcrypt');
 
 
 module.exports.indexUser = (req, res) =>{
+    var page = parseInt(req.query.page || 1);
+    var perPage = 4;
+
+    var start = (page - 1) * perPage;
+    var end = page * perPage;
     res.render("users/user",{
-        users:db.get("users").value()
+        users:db.get("users").slice(start, end).value()
     })
 }
 
@@ -22,7 +27,7 @@ module.exports.postCreateUser =  (req, res) => {
             bcrypt.hash(myPlaintextPassword, salt, function(err, hash) {
                 // Store hash in your password DB.   
                 req.body.password = hash;
-                 db.get("users").push(req.body).write();
+                db.get("users").push(req.body).write();
                 res.redirect("/users");
             });
         });

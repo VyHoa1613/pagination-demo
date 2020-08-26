@@ -45,6 +45,12 @@
       "password": "$2b$10$lMhGkqS7ElVocjMnTFM8U.ikTeF6zJEWyWUzoM1KbNXw6/2BE0jvK",
       "id": "jVwZW-BUH",
       "wrongLoginCount": 4
+    },
+    {
+      "name": "thai",
+      "email": "thai@gmail.com",
+      "password": "$2b$10$3MRKATsSDINahk2lipBn2.1bxV0j6afX2I6H9lKeFI40.R9j9J2Ga",
+      "id": "JCG7FPKQW"
     }
   ],
   "transaction": [
