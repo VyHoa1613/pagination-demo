@@ -13,7 +13,5 @@ block content
             select(name="bookId")
                 each book in books
                     option#op2(value=book.id)=book.title
-            label isComplete
-                input(type="checkbox",name="isComplete",value="false",checked="false",style="display:none")
-            button Create
+            button(class="btn btn-primary mb-2") Create
 

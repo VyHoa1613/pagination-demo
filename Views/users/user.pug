@@ -2,14 +2,17 @@ extends ../layout/common
 
 block content
   h1 List Users
-  style.
-    th,td{
-    border: 1px solid black;
-    text-align:center;
-    }
-    table{
-      width: 500px;
-    }
+    style.
+      th,td{
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    
+      }
+      table{
+        border-collapse: collapse;
+        width: 100%;
+      }
   a(href="/users/create") New User
   table
       tr

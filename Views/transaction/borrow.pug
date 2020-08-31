@@ -2,15 +2,20 @@ extends ../layout/common
 
 block content
   h1 Borrow 
-  style.
-    th,td{
-    border: 1px solid black;
-    text-align:center;
-    }
-    table{
-      width: 500px;
-    }
-
+    style.
+      th,td{
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    
+      }
+      table{
+        border-collapse: collapse;
+        width: 100%;
+      }
+      #isComplete{
+       padding-left: 35px;
+      }
   if errors
     each error in errors
       alert.alert-danger= error
@@ -26,7 +31,7 @@ block content
           tr
               td= borrow.user
               td= borrow.book
-              td
+              td#isComplete
                 - var value = borrow.isComplete
                   if value == "true"
                     input(type="checkbox",checked="")

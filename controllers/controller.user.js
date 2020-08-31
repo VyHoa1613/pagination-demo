@@ -1,12 +1,15 @@
+
 var db = require("../db");
 var shortid = require('shortid')
 var md5 = require('md5');
 var bcrypt = require('bcrypt');
+var cloudinary = require("../middleware/cloudinary");
+
 
 
 module.exports.indexUser = (req, res) =>{
     var page = parseInt(req.query.page || 1);
-    var perPage = 4;
+    var perPage = 8;
 
     var start = (page - 1) * perPage;
     var end = page * perPage;
@@ -20,6 +23,9 @@ module.exports.getCreateUser = (req, res) => {
 }
 
 module.exports.postCreateUser =  (req, res) => {
+    var path = req.file.path;
+    var loader = async (path) => await cloudinary.uploads(path);
+    loader(path);
     req.body.id = shortid.generate();
     var saltRounds = 10;
     var myPlaintextPassword = req.body.password;

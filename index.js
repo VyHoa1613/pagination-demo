@@ -1,10 +1,12 @@
 require('dotenv').config();
 var express = require('express')
 var cookieParser = require('cookie-parser')
+
+
 var md5 = require('md5');
 var app = express()
 var port = 3000
-console.log(process.env.SENDGRID_API_KEY);
+
 
 var booksRouter = require("./Routes/books.route");
 var usersRouter = require("./Routes/users.route");

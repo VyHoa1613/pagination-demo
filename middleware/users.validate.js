@@ -1,9 +1,8 @@
-var db = require("../db");
-var shortid = require('shortid')
+
 module.exports.postCreateUsers = (req, res, next) =>{
+    
     var errors = [];
     var values = req.body;
-    console.log(values);
     if(!req.body.name)
     {
         errors.push("name is required.");
