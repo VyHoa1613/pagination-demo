@@ -51,6 +51,20 @@
       "email": "thai@gmail.com",
       "password": "$2b$10$3MRKATsSDINahk2lipBn2.1bxV0j6afX2I6H9lKeFI40.R9j9J2Ga",
       "id": "JCG7FPKQW"
+    },
+    {
+      "name": "hai",
+      "email": "17110407@student.hcmute.edu.vn",
+      "password": "$2b$10$xBDt5YnTRldMWPr9tcHlq.8pceLdis.zU4qDY1JVBWc3JypXQhld6",
+      "id": "oT9Hap35h",
+      "avatar": "https://res.cloudinary.com/vovanngan/image/upload/v1599111626/single/qnawwvgm954t79cbebp4.jpg"
+    },
+    {
+      "name": "hai",
+      "email": "17110407@student.hcmute.edu.vn",
+      "password": "$2b$10$/ABYAVMvdCq8yLrw7f6pTetTe2fdQR0vQsPwi18Wr1EkDwRW9SmF2",
+      "id": "Mqfx61wRT",
+      "avatar": "https://res.cloudinary.com/vovanngan/image/upload/v1599111626/single/oblmuefqgbh4mysvpzij.jpg"
     }
   ],
   "transaction": [

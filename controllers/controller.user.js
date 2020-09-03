@@ -4,15 +4,20 @@ var shortid = require('shortid')
 var md5 = require('md5');
 var bcrypt = require('bcrypt');
 var cloudinary = require("../middleware/cloudinary");
+const { result } = require("../db");
 
 
 
-module.exports.indexUser = (req, res) =>{
+module.exports.indexUser =async (req, res) =>{
     var page = parseInt(req.query.page || 1);
     var perPage = 8;
 
     var start = (page - 1) * perPage;
     var end = page * perPage;
+    // var getUrl = async (path) => await cloudinary.getUrl(path);
+    // var users = db.get("users").map(item => {
+
+    // })
     res.render("users/user",{
         users:db.get("users").slice(start, end).value()
     })
@@ -22,11 +27,11 @@ module.exports.getCreateUser = (req, res) => {
     res.render("users/create");
 }
 
-module.exports.postCreateUser =  (req, res) => {
-    var path = req.file.path;
-    var loader = async (path) => await cloudinary.uploads(path);
-    loader(path);
+module.exports.postCreateUser = async (req, res) => {
     req.body.id = shortid.generate();
+    var path = req.file.path;
+    var loader = async (path) => await cloudinary.uploads(path).then(async result => await result.url);
+    req.body.avatar =await loader(path);
     var saltRounds = 10;
     var myPlaintextPassword = req.body.password;
     var a = bcrypt.genSalt(saltRounds, function(err, salt) {
@@ -37,7 +42,6 @@ module.exports.postCreateUser =  (req, res) => {
                 res.redirect("/users");
             });
         });
-
 }
 
 module.exports.deleteUser = (req, res) =>{

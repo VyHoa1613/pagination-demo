@@ -1,3 +1,4 @@
+const { resolve } = require('path');
 
 require('dotenv').config();
 var cloudinary = require('cloudinary').v2
@@ -16,9 +17,16 @@ var cloudinary = require('cloudinary').v2
 cloudinary.config(process.env.CLOUDINARY_URL)
 exports.uploads = file =>{
     return new Promise (resolve => {
-        cloudinary.uploader.upload(file, function(error,result) { 
-            console.log(result);
-            resolve(result)
+        cloudinary.uploader.upload(file, {
+            folder:"single"
+        }).then(result => {
+            if (result) {
+                const fs = require('fs')
+                fs.unlinkSync(file)
+                resolve({
+                    url: result.secure_url
+                })
+            }
         })
     })
 }
