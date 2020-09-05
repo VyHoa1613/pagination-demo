@@ -19,11 +19,12 @@
   "users": [
     {
       "email": "hoavy@gmail.com",
-      "name": "hoa",
-      "password": "4297f44b13955235245b2497399d7a93",
+      "name": "Hoa",
+      "password": "123123",
       "id": "AkKtNSoyT",
       "isAdmin": "true",
-      "wrongLoginCount": "0"
+      "wrongLoginCount": "0",
+      "avatar": "https://res.cloudinary.com/vovanngan/image/upload/v1599279111/single/sooflb3lan4y9cd5ad7p.jpg"
     },
     {
       "name": "loan",
@@ -53,18 +54,11 @@
       "id": "JCG7FPKQW"
     },
     {
-      "name": "hai",
-      "email": "17110407@student.hcmute.edu.vn",
-      "password": "$2b$10$xBDt5YnTRldMWPr9tcHlq.8pceLdis.zU4qDY1JVBWc3JypXQhld6",
-      "id": "oT9Hap35h",
-      "avatar": "https://res.cloudinary.com/vovanngan/image/upload/v1599111626/single/qnawwvgm954t79cbebp4.jpg"
-    },
-    {
-      "name": "hai",
-      "email": "17110407@student.hcmute.edu.vn",
-      "password": "$2b$10$/ABYAVMvdCq8yLrw7f6pTetTe2fdQR0vQsPwi18Wr1EkDwRW9SmF2",
-      "id": "Mqfx61wRT",
-      "avatar": "https://res.cloudinary.com/vovanngan/image/upload/v1599111626/single/oblmuefqgbh4mysvpzij.jpg"
+      "name": "micky",
+      "email": "hoavy@gmail.com",
+      "password": "$2b$10$/ib3ab0352Mgm06eAI8ceeAXB1ciPOucTh9r62L09N.N6ooSJpMr.",
+      "id": "XEwZnpOu7",
+      "avatar": "https://res.cloudinary.com/vovanngan/image/upload/v1599279157/single/crswxse95d1a1xfznvfl.jpg"
     }
   ],
   "transaction": [

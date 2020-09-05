@@ -21,6 +21,8 @@ router.get("/:id/delete",controller.deleteUser)
 
 router.get("/:id/update",controller.getUpdateUser)
 
-router.post("/update",controller.postUpdateUser)
+router.post("/update",
+upload.single("avatar"),
+controller.postUpdateUser)
 
 module.exports = router;

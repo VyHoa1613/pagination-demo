@@ -2,18 +2,22 @@ extends ../layout/common
 
 block content
     h1 Update book
-    form(action="/users/update",method="POST")
-        input(type="text",name="id", value=user.id,style="display:none")
+    form(action="/users/update",method="POST",enctype="multipart/form-data")
+        input(type="text",name="id", value=user.id,style="display:none",)
         label(for="name") Name
         br
-        input#name(type="text", name="name")
+        input#name(type="text", name="name",class="form-control")
         br
         label(for="email") Email
         br
-        input#email(type="text", name="email",value=values ? values.email : "")
+        input#email(type="text", name="email",value=values ? values.email : "",class="form-control")
         br
         label(for="password") Password
         br
-        input#password(type="text", name="password")
+        input#password(type="text", name="password",class="form-control")
+        br
+        .form-group
+            label(for="avatar") Avatar
+            input#avatar.form-control-file(type="file", name="avatar")
         br
         button(class="btn btn-primary mb-2") Update

@@ -58,8 +58,13 @@ module.exports.getUpdateUser = (req, res) => {
     })
 }
 
-module.exports.postUpdateUser = (req, res) => {
+module.exports.postUpdateUser = async (req, res) => {
     var id = req.body.id;
-    db.get("users").find({id:id}).assign({name: req.body.name}).write();
+    var image = await cloudinary.uploads(req.file.path);
+    var value = db.get("users").find({id:id}).value();
+    if(!value.avatar){
+        db.get("users").find({id:id}).set({avatar:""}).write();
+    }
+    db.get("users").find({id:id}).assign({name: req.body.name, email:req.body.email, password: req.body.password, avatar:image.url}).write();
     res.redirect("/users");
 }
